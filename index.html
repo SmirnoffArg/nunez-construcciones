@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construcciones Nuñez | Proyectos y Contacto</title>
+    <meta name="description" content="Especialistas en construcción y remodelación. Explora nuestros proyectos y contáctanos fácilmente por WhatsApp.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==============================================
+           CONFIGURACIÓN FÁCIL - EDITA ESTAS VARIABLES
+           ============================================== */
+        :root {
+            /* COLORES PRINCIPALES */
+            --color-primary: #2c5530;       /* Verde construcción */
+            --color-secondary: #ff6b35;     /* Naranja vibrante */
+            --color-accent: #ffd23f;        /* Amarillo dorado */
+            --color-dark: #1a1a1a;
+            --color-light: #f8f9fa;
+            --color-white: #ffffff;
+            --color-gray: #6c757d;
+            
+            /* FUENTES */
+            --font-primary: 'Arial', sans-serif;
+            --font-secondary: 'Georgia', serif;
+            
+            /* ESPACIADO */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+            
+            /* SOMBRAS */
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 20px rgba(0,0,0,0.15);
+            --shadow-heavy: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* ==============================================
+           CONFIGURACIÓN DE CONTENIDO - EDITAR AQUÍ
+           ============================================== */
+        
+        /* RESET Y BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--color-dark);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+        
+        /* NAVEGACIÓN */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: var(--spacing-sm) 0;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .logo i {
+            color: var(--color-secondary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-md);
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--color-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-primary);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--color-secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-dark);
+            transition: 0.3s;
+        }
+        
+        /* HERO SECTION - ADAPTADA */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(44,85,48,0.85), rgba(255,107,53,0.7)), 
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: var(--spacing-sm);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-md);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+        }
+        
+        .btn {
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .btn-primary {
+            background: var(--color-secondary);
+            color: var(--color-white);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .btn-primary:hover {
+            background: #e55a30;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        /* SECCIONES */
+        .section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--color-secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--color-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* PROYECTOS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .project-card {
+            background: var(--color-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .project-image {
+            height: 250px;
+            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 4rem;
+        }
+        
+        .project-content {
+            padding: var(--spacing-md);
+        }
+        
+        .project-content h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* CONTACTO SIMPLIFICADO */
+        .contact {
+            background: var(--color-light);
+            text-align: center; /* Centrar el contenido */
+        }
+        
+        .whatsapp-bubble {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background-color: var(--color-white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--color-dark);
+        }
+
+        .whatsapp-bubble:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .whatsapp-bubble .icon {
+            font-size: 3rem;
+            color: #25d366; /* Color de WhatsApp */
+        }
+        
+        .whatsapp-bubble span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--color-dark);
+            color: var(--color-white);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-section h3 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: var(--color-secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--color-secondary);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: var(--color-white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-medium);
+                padding: var(--spacing-md) 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-hard-hat"></i>
+                    CONSTRUCCIONES NÚÑEZ
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Construimos tus sueños, reforzamos tu confianza.</h1>
+            <p>Explora nuestro trabajo o contáctanos para tu próximo proyecto.</p>
+            <div class="cta-buttons">
+                <a href="#proyectos" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                    Ver Proyectos
+                </a>
+                <a href="#contacto" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Proyectos Destacados</h2>
+                <p>Conoce algunos de nuestros trabajos más representativos</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Casa Familiar - Barrio Norte</h3>
+                        <p>Casa de 120m² con 3 dormitorios, construcción tradicional en ladrillo visto. Incluye quincho y parrilla.</p>
+                        <p><strong>Superficie:</strong> 120m² | <strong>Año:</strong> 2023</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Local Comercial - Centro</h3>
+                        <p>Remodelación integral de local comercial de 80m² con vidriera moderna y área de depósito.</p>
+                        <p><strong>Superficie:</strong> 80m² | <strong>Año:</strong> 2024</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Ampliación y Reforma</h3>
+                        <p>Ampliación de 40m² con nuevo dormitorio y baño, más remodelación completa de cocina existente.</p>
+                        <p><strong>Ampliación:</strong> 40m² | <strong>Año:</strong> 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contactanos</h2>
+                <p>¡Hablemos de tu proyecto! Escríbenos por WhatsApp.</p>
+            </div>
+            <a href="https://wa.me/5491123542995" class="whatsapp-bubble fade-in" target="_blank">
+                <i class="fab fa-whatsapp icon"></i>
+                <span>+54 9 11 2354-2995</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Construcciones Núñez</h3>
+                    <p>Empresa especializada en construcción de casas, locales comerciales y remodelaciones con atención personalizada.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto Rápido</h3>
+                    <p>+54 9 11 2354-2995</p>
+                    <p>info@construccionesnunez.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Construcciones Núñez. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // JS para el menú hamburguesa
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // JS para animaciones al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // 10% del elemento visible para activar
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
+                
