@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construcciones Nuñez | Construimos tus sueños, reforzamos tu confianza</title>
-    <meta name="description" content="Especialistas en construcción de casas, locales y remodelaciones. Calidad, compromiso y atención personalizada para hacer realidad tu proyecto.">
+    <title>Construcciones Nuñez | Proyectos y Contacto</title>
+    <meta name="description" content="Especialistas en construcción y remodelación. Explora nuestros proyectos y contáctanos fácilmente por WhatsApp.">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -143,7 +143,7 @@
             transition: 0.3s;
         }
         
-        /* HERO SECTION */
+        /* HERO SECTION - ADAPTADA */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, rgba(44,85,48,0.85), rgba(255,107,53,0.7)), 
@@ -206,18 +206,6 @@
             box-shadow: var(--shadow-heavy);
         }
         
-        .btn-secondary {
-            background: transparent;
-            color: var(--color-white);
-            border: 2px solid var(--color-white);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--color-white);
-            color: var(--color-primary);
-            transform: translateY(-2px);
-        }
-        
         /* SECCIONES */
         .section {
             padding: var(--spacing-xl) 0;
@@ -251,52 +239,6 @@
             color: var(--color-gray);
             max-width: 600px;
             margin: 0 auto;
-        }
-        
-        /* SERVICIOS */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-        }
-        
-        .service-card {
-            background: var(--color-white);
-            padding: var(--spacing-lg);
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            color: var(--color-secondary);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
         }
         
         /* PROYECTOS */
@@ -340,42 +282,313 @@
             margin-bottom: var(--spacing-xs);
         }
         
-        /* ESTADÍSTICAS */
-        .stats {
-            background: var(--color-primary);
-            color: var(--color-white);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-md);
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: var(--spacing-md);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--color-accent);
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            margin-top: var(--spacing-xs);
-        }
-        
-        /* CONTACTO */
+        /* CONTACTO SIMPLIFICADO */
         .contact {
             background: var(--color-light);
+            text-align: center; /* Centrar el contenido */
         }
         
-        .contact-grid {
+        .whatsapp-bubble {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background-color: var(--color-white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--color-dark);
+        }
+
+        .whatsapp-bubble:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .whatsapp-bubble .icon {
+            font-size: 3rem;
+            color: #25d366; /* Color de WhatsApp */
+        }
+        
+        .whatsapp-bubble span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--color-dark);
+            color: var(--color-white);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .footer-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            margin-top: var(--spacing-lg);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-section h3 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: var(--color-secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--color-secondary);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: var(--color-white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-medium);
+                padding: var(--spacing-md) 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-hard-hat"></i>
+                    CONSTRUCCIONES NÚÑEZ
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Construimos tus sueños, reforzamos tu confianza.</h1>
+            <p>Explora nuestro trabajo o contáctanos para tu próximo proyecto.</p>
+            <div class="cta-buttons">
+                <a href="#proyectos" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                    Ver Proyectos
+                </a>
+                <a href="#contacto" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Proyectos Destacados</h2>
+                <p>Conoce algunos de nuestros trabajos más representativos</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Casa Familiar - Barrio Norte</h3>
+                        <p>Casa de 120m² con 3 dormitorios, construcción tradicional en ladrillo visto. Incluye quincho y parrilla.</p>
+                        <p><strong>Superficie:</strong> 120m² | <strong>Año:</strong> 2023</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Local Comercial - Centro</h3>
+                        <p>Remodelación integral de local comercial de 80m² con vidriera moderna y área de depósito.</p>
+                        <p><strong>Superficie:</strong> 80m² | <strong>Año:</strong> 2024</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Ampliación y Reforma</h3>
+                        <p>Ampliación de 40m² con nuevo dormitorio y baño, más remodelación completa de cocina existente.</p>
+                        <p><strong>Ampliación:</strong> 40m² | <strong>Año:</strong> 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contactanos</h2>
+                <p>¡Hablemos de tu proyecto! Escríbenos por WhatsApp.</p>
+            </div>
+            <a href="https://wa.me/5491123542995" class="whatsapp-bubble fade-in" target="_blank">
+                <i class="fab fa-whatsapp icon"></i>
+                <span>+54 9 11 2354-2995</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Construcciones Núñez</h3>
+                    <p>Empresa especializada en construcción de casas, locales comerciales y remodelaciones con atención personalizada.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto Rápido</h3>
+                    <p>+54 9 11 2354-2995</p>
+                    <p>info@construccionesnunez.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Construcciones Núñez. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // JS para el menú hamburguesa
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // JS para animaciones al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // 10% del elemento visible para activar
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
