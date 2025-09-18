@@ -10,7 +10,7 @@
     
     <style>
         /* ==============================================
-           ESTILOS (Mismos que en el archivo anterior)
+           ESTILOS
            ============================================== */
         :root {
             --color-primary: #2c5530;
@@ -178,38 +178,6 @@
             transform: translateY(-2px);
         }
         
-        .filters {
-            padding: var(--spacing-lg) 0;
-            text-align: center;
-            background: var(--color-white);
-        }
-        
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: var(--spacing-xs) var(--spacing-md);
-            background: var(--color-light);
-            color: var(--color-dark);
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--color-primary);
-            color: var(--color-white);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-light);
-        }
-        
         .gallery {
             padding: var(--spacing-lg) 0;
         }
@@ -227,6 +195,7 @@
             box-shadow: var(--shadow-light);
             transition: all 0.3s ease;
             cursor: pointer;
+            position: relative;
         }
         
         .gallery-item:hover {
@@ -256,97 +225,6 @@
         
         .gallery-item:hover .gallery-image img {
             transform: scale(1.05);
-        }
-        
-        .gallery-info {
-            padding: var(--spacing-md);
-        }
-        
-        .gallery-info h3 {
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-xs);
-            font-size: 1.3rem;
-        }
-        
-        .gallery-info p {
-            color: var(--color-gray);
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .project-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: var(--spacing-sm);
-        }
-        
-        .project-category {
-            background: var(--color-accent);
-            color: var(--color-dark);
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        .project-year {
-            color: var(--color-gray);
-            font-size: 0.9rem;
-        }
-        
-        .videos-section {
-            padding: var(--spacing-lg) 0;
-            background: var(--color-white);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
-            position: relative;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: var(--color-secondary);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--spacing-md);
-        }
-        
-        .video-item {
-            background: var(--color-light);
-            border-radius: 15px;
-            padding: var(--spacing-md);
-            text-align: center;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .video-placeholder {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-white);
-            font-size: 2rem;
-            margin-bottom: var(--spacing-sm);
         }
         
         .lightbox {
@@ -392,14 +270,6 @@
         .lightbox-close:hover {
             color: var(--color-secondary);
             transform: scale(1.1);
-        }
-        
-        .lightbox-info {
-            background: rgba(0,0,0,0.8);
-            color: var(--color-white);
-            padding: var(--spacing-md);
-            border-radius: 0 0 10px 10px;
-            text-align: center;
         }
         
         .contact-cta {
@@ -551,10 +421,6 @@
                 font-size: 1rem;
             }
             
-            .filter-buttons {
-                gap: var(--spacing-xs);
-            }
-            
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
@@ -613,222 +479,739 @@
         </div>
     </section>
 
-    <section class="filters">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="casas">Casas</button>
-                <button class="filter-btn" data-filter="locales">Locales</button>
-                <button class="filter-btn" data-filter="reformas">Reformas</button>
-            </div>
-        </div>
-    </section>
-
     <section class="gallery">
         <div class="container">
             <div class="gallery-grid">
                 
-                <div class="gallery-item fade-in" data-category="casas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0025.jpg" data-title="Construcción Residencial 1" data-description="Proceso de construcción de una vivienda unifamiliar.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0025.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0025.jpg" alt="Vivienda unifamiliar en construcción.">
+                            <img src="assets/proyectos/IMG-20250918-WA0025.jpg" alt="Cimientos de una casa en construcción.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Construcción de Casa - Etapa Inicial</h3>
-                        <p>Trabajo de cimientos y estructura de una casa nueva.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Casas</span>
-                            <span class="project-year">2024</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="reformas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0026.jpg" data-title="Instalación Eléctrica" data-description="Cableado eléctrico en un nuevo proyecto.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0026.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0026.jpg" alt="Instalación eléctrica en obra.">
+                            <img src="assets/proyectos/IMG-20250918-WA0026.jpg" alt="Estructura de hormigón en construcción.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Remodelación Eléctrica</h3>
-                        <p>Renovación y puesta a punto de instalaciones eléctricas.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Reformas</span>
-                            <span class="project-year">2024</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="casas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0027.jpg" data-title="Fachada de Casa" data-description="Detalle de la fachada con ladrillo visto.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0027.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0027.jpg" alt="Fachada de casa en construcción.">
+                            <img src="assets/proyectos/IMG-20250918-WA0027.jpg" alt="Instalaciones eléctricas en paredes.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Fachada y Acabados</h3>
-                        <p>Detalles exteriores con ladrillo y revoque.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Casas</span>
-                            <span class="project-year">2023</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="reformas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0028.jpg" data-title="Interior en obra" data-description="Interior de una casa en etapa de terminaciones.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0028.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0028.jpg" alt="Interior de obra con detalles de mampostería.">
+                            <img src="assets/proyectos/IMG-20250918-WA0028.jpg" alt="Mampostería interior.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Trabajos Interiores</h3>
-                        <p>Preparación de paredes y espacios interiores.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Reformas</span>
-                            <span class="project-year">2024</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="locales">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0029.jpg" data-title="Piso de Local Comercial" data-description="Colocación de baldosas en local comercial.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0029.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0029.jpg" alt="Detalle del piso de un local comercial.">
+                            <img src="assets/proyectos/IMG-20250918-WA0029.jpg" alt="Colocación de pisos en local comercial.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Pisos para Local Comercial</h3>
-                        <p>Instalación de pisos de alta resistencia en un local.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Locales</span>
-                            <span class="project-year">2024</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="reformas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0030.jpg" data-title="Ampliación de Cocina" data-description="Ampliación de cocina con paredes de mampostería.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0030.jpg">
                         <div class="gallery-image">
                             <img src="assets/proyectos/IMG-20250918-WA0030.jpg" alt="Ampliación de cocina.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Ampliación de Cocina</h3>
-                        <p>Construcción de una nueva extensión para una cocina.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Reformas</span>
-                            <span class="project-year">2023</span>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0031.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0031.jpg" alt="Losa de entrepiso en construcción.">
                         </div>
-                    </div>
+                    </a>
                 </div>
                 
-                <div class="gallery-item fade-in" data-category="casas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0031.jpg" data-title="Estructura de Hormigón" data-description="Estructura de hormigón para nueva planta.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0032.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0031.jpg" alt="Estructura de hormigón.">
+                            <img src="assets/proyectos/IMG-20250918-WA0032.jpg" alt="Columnas de hormigón.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Estructura Reforzada</h3>
-                        <p>Construcción de losa y vigas de hormigón armado.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Casas</span>
-                            <span class="project-year">2024</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="casas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0032.jpg" data-title="Construcción de Muro" data-description="Detalles de la construcción de un muro divisorio.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0033.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0032.jpg" alt="Muro en construcción.">
+                            <img src="assets/proyectos/IMG-20250918-WA0033.jpg" alt="Remodelación interior.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Levantamiento de Muro</h3>
-                        <p>Mampostería de ladrillos para muro exterior.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Casas</span>
-                            <span class="project-year">2024</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="casas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0033.jpg" data-title="Losa de Entrepiso" data-description="Colocación de losa de hormigón sobre vigas.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0035.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0033.jpg" alt="Losa de entrepiso.">
+                            <img src="assets/proyectos/IMG-20250918-WA0035.jpg" alt="Techo de hormigón.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Losa y Estructura</h3>
-                        <p>Preparación de vigas y losas para un segundo piso.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Casas</span>
-                            <span class="project-year">2024</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="gallery-item fade-in" data-category="casas">
-                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0035.jpg" data-title="Avance de Obra" data-description="Vista general del avance de una construcción residencial.">
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0037.jpg">
                         <div class="gallery-image">
-                            <img src="assets/proyectos/IMG-20250918-WA0035.jpg" alt="Avance de obra.">
+                            <img src="assets/proyectos/IMG-20250918-WA0037.jpg" alt="Mampostería de ladrillos.">
                         </div>
                     </a>
-                    <div class="gallery-info">
-                        <h3>Avance de Obra Residencial</h3>
-                        <p>Progreso de la obra, desde la estructura hasta los cerramientos.</p>
-                        <div class="project-meta">
-                            <span class="project-category">Casas</span>
-                            <span class="project-year">2023</span>
-                        </div>
-                    </div>
                 </div>
 
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0038.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0038.jpg" alt="Cimientos de una casa.">
+                        </div>
+                    </a>
                 </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0039.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0039.jpg" alt="Mampostería de local.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0040.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0040.jpg" alt="Losa para segunda planta.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0041.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0041.jpg" alt="Estructura interior.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0042.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0042.jpg" alt="Remodelación interior.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0043.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0043.jpg" alt="Muro de ladrillos.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0045.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0045.jpg" alt="Estructura del techo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0046.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0046.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0047.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0047.jpg" alt="Cimientos de casa.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0048.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0048.jpg" alt="Baño de local.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0049.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0049.jpg" alt="Estructura de ladrillos.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0050.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0050.jpg" alt="Detalle de mampostería.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0051.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0051.jpg" alt="Remodelación de baño.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0053.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0053.jpg" alt="Avance de local.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0057.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0057.jpg" alt="Estructura de escaleras.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0058.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0058.jpg" alt="Losa para terraza.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0059.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0059.jpg" alt="Instalaciones de agua.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0061.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0061.jpg" alt="Estructura de techo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0063.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0063.jpg" alt="Vigas de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0064.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0064.jpg" alt="Vigas de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0066.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0066.jpg" alt="Estructura de ladrillos.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0068.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0068.jpg" alt="Trabajo de plomería.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0069.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0069.jpg" alt="Revoque de paredes.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0070.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0070.jpg" alt="Estructura de techo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0072.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0072.jpg" alt="Proceso de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0073.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0073.jpg" alt="Remodelación de baño.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0075.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0075.jpg" alt="Estructura de vigas.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0076.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0076.jpg" alt="Estructura de losa.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0077.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0077.jpg" alt="Estructura de viga.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0078.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0078.jpg" alt="Construcción en ladrillo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0079.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0079.jpg" alt="Estructura de entrepiso.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0080.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0080.jpg" alt="Estructura de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0081.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0081.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0083.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0083.jpg" alt="Remodelación interior.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0084.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0084.jpg" alt="Estructura de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0086.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0086.jpg" alt="Estructura de vigas.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0088.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0088.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0089.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0089.jpg" alt="Cimientos y paredes.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0091.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0091.jpg" alt="Construcción en ladrillo.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0092.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0092.jpg" alt="Revestimiento de paredes.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0093.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0093.jpg" alt="Revoque de paredes.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0095.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0095.jpg" alt="Estructura de techo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0096.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0096.jpg" alt="Mampostería de paredes.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0098.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0098.jpg" alt="Estructura de techo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0100.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0100.jpg" alt="Cimientos de casa.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0101.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0101.jpg" alt="Trabajo de plomería.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0103.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0103.jpg" alt="Ladrillos y estructura.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0105.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0105.jpg" alt="Cimientos de casa.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0106.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0106.jpg" alt="Trabajo de techo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0107.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0107.jpg" alt="Estructura de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0109.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0109.jpg" alt="Trabajo de techo.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0111.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0111.jpg" alt="Estructura de vigas.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0112.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0112.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0113.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0113.jpg" alt="Estructura de losa.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0114.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0114.jpg" alt="Remodelación interior.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0115.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0115.jpg" alt="Remodelación de baño.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0116.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0116.jpg" alt="Estructura de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0117.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0117.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0118.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0118.jpg" alt="Revoque de paredes.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0119.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0119.jpg" alt="Cimientos y estructura.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0120.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0120.jpg" alt="Remodelación interior.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0121.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0121.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0122.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0122.jpg" alt="Trabajo de plomería.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0123.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0123.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0124.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0124.jpg" alt="Cimientos de casa.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0125.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0125.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0126.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0126.jpg" alt="Remodelación interior.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0127.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0127.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0128.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0128.jpg" alt="Cimientos y paredes.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0129.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0129.jpg" alt="Remodelación interior.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0130.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0130.jpg" alt="Estructura de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0131.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0131.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0132.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0132.jpg" alt="Remodelación de local.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0133.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0133.jpg" alt="Remodelación de cocina.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0134.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0134.jpg" alt="Estructura de hormigón.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0135.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0135.jpg" alt="Remodelación de cocina.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0136.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0136.jpg" alt="Estructura de ladrillos.">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-item fade-in">
+                    <a href="#" class="open-lightbox" data-image="assets/proyectos/IMG-20250918-WA0137.jpg">
+                        <div class="gallery-image">
+                            <img src="assets/proyectos/IMG-20250918-WA0137.jpg" alt="Avance de obra.">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <section class="videos-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Videos de Nuestros Trabajos</h2>
-            </div>
-            <div class="videos-grid">
-                <div class="video-item fade-in">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <h3>Proceso de Construcción</h3>
-                    <p>Time-lapse de construcción de casa familiar</p>
-                </div>
-                <div class="video-item fade-in">
-                    <div class="video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <h3>Antes y Después</h3>
-                    <p>Transformación completa de local comercial</p>
-                </div>
-            </div>
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Imagen ampliada">
         </div>
-    </section>
-
+    </div>
+    
     <section class="contact-cta">
         <div class="container">
-            <h2>¿Te gustó algún proyecto?</h2>
-            <p>Contactanos para conversar sobre tu próxima construcción o remodelación</p>
+            <h2>¿Listo para empezar tu proyecto?</h2>
+            <p>Contáctanos hoy mismo para solicitar un presupuesto sin compromiso y convertir tu visión en realidad.</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/5491123542995" class="btn btn-white" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                    Contactar por WhatsApp
-                </a>
-                <a href="index.html" class="btn btn-white">
-                    <i class="fas fa-home"></i>
-                    Volver al Inicio
-                </a>
+                <a href="index.html#contacto" class="btn btn-white"><i class="fas fa-phone"></i> Contacto</a>
             </div>
         </div>
     </section>
@@ -837,118 +1220,104 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Construcciones Núñez</h3>
-                    <p>Empresa especializada en construcción de casas, locales comerciales y remodelaciones con atención personalizada.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <h3>CONSTRUCCIONES NÚÑEZ</h3>
+                    <p>Especialistas en la construcción y remodelación de espacios residenciales y comerciales.</p>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>Contacto Rápido</h3>
-                    <p>+54 9 11 2354-2995</p>
-                    <p>info@construccionesnunez.com</p>
+                    <h3>Enlaces rápidos</h3>
+                    <p><a href="index.html">Inicio</a></p>
+                    <p><a href="proyectos.html">Proyectos</a></p>
+                    <p><a href="index.html#contacto">Contacto</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contáctanos</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> La Plata, Buenos Aires, Argentina</p>
+                    <p><i class="fas fa-envelope"></i> info@nunezconstrucciones.com.ar</p>
+                    <p><i class="fas fa-phone-alt"></i> +54 9 221-654-3210</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/5492216543210" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Construcciones Núñez. Todos los derechos reservados.</p>
+                &copy; <span id="current-year"></span> Construcciones Núñez. Todos los derechos reservados.
             </div>
         </div>
     </footer>
-
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
-            <div class="lightbox-info">
-                <h3 id="lightbox-title"></h3>
-                <p id="lightbox-description"></p>
-            </div>
-        </div>
-    </div>
-
+    
     <script>
-        // MENÚ HAMBURGUESA
+        // JS para la barra de navegación y el hamburger
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
-        
+        const body = document.querySelector('body');
+
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            body.classList.toggle('no-scroll');
         });
 
-        // FILTROS DE GALERÍA Y LIGHTBOX
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const openLightboxButtons = document.querySelectorAll('.open-lightbox');
+        // CERRAR MENÚ AL CLICKEAR UN ENLACE
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                body.classList.remove('no-scroll');
+            });
+        });
+
+        // JS para el efecto Fade In
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // LIGHTBOX
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxTitle = document.getElementById('lightbox-title');
-        const lightboxDescription = document.getElementById('lightbox-description');
         const lightboxClose = document.querySelector('.lightbox-close');
 
-        // Lógica de Filtros
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                const filter = button.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    const isVisible = (filter === 'all' || item.getAttribute('data-category') === filter);
-                    item.style.display = isVisible ? 'block' : 'none';
-                    item.style.opacity = isVisible ? '1' : '0';
-                    item.style.transform = isVisible ? 'translateY(0)' : 'translateY(20px)';
-                });
-            });
-        });
-        
-        // Lógica de Lightbox (para abrir)
-        openLightboxButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const imgSrc = button.getAttribute('data-image');
-                const imgTitle = button.getAttribute('data-title');
-                const imgDescription = button.getAttribute('data-description');
-
-                lightboxImg.src = imgSrc;
-                lightboxTitle.textContent = imgTitle;
-                lightboxDescription.textContent = imgDescription;
+        document.querySelectorAll('.open-lightbox').forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
                 lightbox.style.display = 'block';
+                lightboxImg.src = item.getAttribute('data-image');
             });
         });
 
-        // Lógica de Lightbox (para cerrar)
         lightboxClose.addEventListener('click', () => {
             lightbox.style.display = 'none';
         });
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
+        // CERRAR LIGHTBOX AL CLICKEAR FUERA DE LA IMAGEN
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
                 lightbox.style.display = 'none';
             }
         });
 
-        // ANIMACIÓN FADE-IN AL HACER SCROLL
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                lightbox.style.display = 'none';
+            }
         });
+
+        // ACTUALIZAR AÑO EN EL FOOTER
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
