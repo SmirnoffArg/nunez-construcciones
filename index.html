@@ -241,45 +241,50 @@
             margin: 0 auto;
         }
         
-        /* PROYECTOS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--spacing-md);
+        /* PROYECTOS CTA */
+        .projects-cta {
+            display: flex;
+            justify-content: center;
             margin-top: var(--spacing-lg);
         }
         
-        .project-card {
-            background: var(--color-white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .project-image {
-            height: 250px;
-            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-            position: relative;
+        .btn-projects {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
             color: var(--color-white);
-            font-size: 4rem;
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.4s ease;
+            text-align: center;
+            min-width: 300px;
         }
         
-        .project-content {
-            padding: var(--spacing-md);
+        .btn-projects:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            background: linear-gradient(135deg, #1e3d22, #e55a30);
         }
         
-        .project-content h3 {
-            color: var(--color-primary);
+        .btn-projects i {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-accent);
+        }
+        
+        .btn-projects span {
+            font-size: 1.5rem;
+            font-weight: bold;
             margin-bottom: var(--spacing-xs);
+        }
+        
+        .btn-projects p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin: 0;
         }
         
         /* CONTACTO SIMPLIFICADO */
@@ -441,6 +446,15 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .btn-projects {
+                min-width: 250px;
+                padding: var(--spacing-md);
+            }
+            
+            .btn-projects span {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -488,37 +502,12 @@
                 <h2>Proyectos Destacados</h2>
                 <p>Conoce algunos de nuestros trabajos más representativos</p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Casa Familiar - Barrio Norte</h3>
-                        <p>Casa de 120m² con 3 dormitorios, construcción tradicional en ladrillo visto. Incluye quincho y parrilla.</p>
-                        <p><strong>Superficie:</strong> 120m² | <strong>Año:</strong> 2023</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Local Comercial - Centro</h3>
-                        <p>Remodelación integral de local comercial de 80m² con vidriera moderna y área de depósito.</p>
-                        <p><strong>Superficie:</strong> 80m² | <strong>Año:</strong> 2024</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <i class="fas fa-paint-roller"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Ampliación y Reforma</h3>
-                        <p>Ampliación de 40m² con nuevo dormitorio y baño, más remodelación completa de cocina existente.</p>
-                        <p><strong>Ampliación:</strong> 40m² | <strong>Año:</strong> 2024</p>
-                    </div>
-                </div>
+            <div class="projects-cta fade-in">
+                <a href="proyectos.html" class="btn-projects">
+                    <i class="fas fa-images"></i>
+                    <span>Ver Todos Nuestros Proyectos</span>
+                    <p>Fotos y videos de nuestros trabajos realizados</p>
+                </a>
             </div>
         </div>
     </section>
